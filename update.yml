@@ -1,0 +1,13 @@
+---
+- hosts: "masters, nodes"
+  remote_user: kube
+  become: yes
+  become_method: sudo
+  become_user: root
+  gather_facts: yes
+  connection: ssh
+
+  tasks:
+     - name: update and upgrade apt packages
+       shell: |
+              sudo apt update && sudo apt full-upgrade -y
