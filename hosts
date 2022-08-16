@@ -1,0 +1,9 @@
+# When running the users.yml playbook, replace 'root' with the name of the account that will be used to execute the playbook on each node
+# After running the users.yml playbook, update ansible_user to `kube`
+
+[masters]
+master ansible_host=kube1.local.lan ansible_user=root
+
+[nodes]
+node1 ansible_host=kube2.local.lan ansible_user=root
+node2 ansible_host=kube3.local.lan ansible_user=root
